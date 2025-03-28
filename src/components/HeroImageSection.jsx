@@ -14,15 +14,12 @@ const HeroImageSection = () => {
 
   const categoryHandler = (e) => {
     if (e.target.id === "Men") {
-      console.log("Men");
       dispatch(emptyWomenArray([]));
       dispatch(emptyKidsArray([]));
     } else if (e.target.id === "Women") {
-      console.log("Women");
       dispatch(emptyMenArray([]));
       dispatch(emptyKidsArray([]));
     } else if (e.target.id === "Kids") {
-      console.log("Kids");
       dispatch(emptyWomenArray([]));
       dispatch(emptyMenArray([]));
     }

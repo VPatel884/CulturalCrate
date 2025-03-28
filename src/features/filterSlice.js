@@ -135,7 +135,6 @@ export const filterSlice = createSlice({
     builder.addCase(fetchWomenProducts.fulfilled, (state, action) => {
       state.status = "Success";
       state.womenProducts = action.payload;
-      console.log(action.payload);
       // Filter out already existing products in the state.products array
       const newProducts = action.payload?.filter(
         (newProduct) =>

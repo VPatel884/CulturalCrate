@@ -1,21 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://ecommerce-backends-gamma.vercel.app";
 
 // API requests for handling addresses
 export const addAddress = createAsyncThunk(
   "address/addAddress",
   async (address) => {
-    const response = await axios.post(
-      `${API_URL}/address/add`,
-      address,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.post(`${API_URL}/address/add`, address, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     return response.data;
   }
 );
@@ -34,9 +30,7 @@ export const updatedAddress = createAsyncThunk(
 export const deleteAddress = createAsyncThunk(
   "address/deleteAddress",
   async (id) => {
-    const response = await axios.delete(
-      `${API_URL}/address/remove/${id}`
-    );
+    const response = await axios.delete(`${API_URL}/address/remove/${id}`);
     return response.data;
   }
 );
